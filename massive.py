@@ -134,8 +134,7 @@ print(result)
 # Вывод функции: name=Alice, age=30, city=New York
 
 def generate_string(**kwargs):
-    key_value = [f'{key}={value}' for key, value in kwargs.items()]
-    return ', '.join(key_value)
+    return ', '.join(map(lambda item: f'{item[0]}={item[1]}', kwargs.items()))
 
-result = generate_string(name = 'Alice', age = 30, city = 'New York')
+result = generate_string(name='Alice', age=30, city='New York')
 print(result)
